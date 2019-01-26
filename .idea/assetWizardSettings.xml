@@ -14,9 +14,9 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_search" />
+                            <entry key="outputName" value="ic_star_border" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\ZarpSystem\Desktop\ic_search.svg" />
+                            <entry key="sourceFile" value="C:\Users\ZarpSystem\Desktop\ic_star_border.svg" />
                           </map>
                         </option>
                       </PersistentState>
