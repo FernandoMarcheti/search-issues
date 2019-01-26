@@ -21,6 +21,7 @@ class IssuesFragment : Fragment() {
         binding.rvIssues.layoutManager = LinearLayoutManager(activity)
         viewModel = ViewModelProviders.of(this).get(IssueListViewModel::class.java)
         binding.viewModel = viewModel
+
         return binding.root
     }
 }
