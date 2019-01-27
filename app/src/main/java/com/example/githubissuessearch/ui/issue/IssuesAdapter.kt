@@ -26,8 +26,8 @@ class IssuesAdapter: RecyclerView.Adapter<IssuesAdapter.ViewHolder>() {
         return if(::issues.isInitialized) issues.size else 0
     }
 
-    fun updatePostList(postList:List<Issue>){
-        this.issues = postList
+    fun updatePostList(issues:List<Issue>){
+        this.issues = issues
         notifyDataSetChanged()
     }
 

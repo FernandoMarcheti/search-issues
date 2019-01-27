@@ -23,3 +23,16 @@ fun setMutableText(view: TextView, text: MutableLiveData<String>?) {
         text.observe(parentActivity, Observer { value -> view.text = value?:""})
     }
 }
+
+@BindingAdapter("mutableInt")
+fun setMutableInt(view: TextView, number: MutableLiveData<Int>?) {
+    val parentActivity:AppCompatActivity? = view.getParentActivity()
+    if(parentActivity != null) {
+        number?.observe(parentActivity, Observer { value -> view.text = value.toString()})
+    }
+}
+
+@BindingAdapter("adapter")
+fun setAdapter(view: RecyclerView, adapter: RecyclerView.Adapter<*>) {
+    view.adapter = adapter
+}

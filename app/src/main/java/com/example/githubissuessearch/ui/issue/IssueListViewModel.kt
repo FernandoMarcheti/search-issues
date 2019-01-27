@@ -3,6 +3,7 @@ package com.example.githubissuessearch.ui.issue
 import android.arch.lifecycle.MutableLiveData
 import android.view.View
 import com.example.githubissuessearch.base.BaseViewModel
+import com.example.githubissuessearch.model.Issue
 import com.example.githubissuessearch.network.GithubApi
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -12,10 +13,11 @@ import javax.inject.Inject
 class IssueListViewModel : BaseViewModel() {
 
     @Inject
-    lateinit var postApi: GithubApi
+    lateinit var githubApi: GithubApi
 
     private lateinit var subscription: Disposable
     val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
+    val issuesAdapter: IssuesAdapter = IssuesAdapter()
 
     override fun onCleared() {
         super.onCleared()
@@ -27,14 +29,14 @@ class IssueListViewModel : BaseViewModel() {
     }
 
     private fun loadPosts(){
-        subscription = postApi.getIssues()
+        subscription = githubApi.getIssues("repo:olivierlacan/keep-a-changelog")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { onRetrievePostListStart() }
             .doOnTerminate { onRetrievePostListFinish() }
             .subscribe(
-                { onRetrievePostListSuccess() },
-                { onRetrievePostListError() }
+                { result -> onRetrievePostListSuccess(result.items) },
+                { err -> onRetrievePostListError(err) }
             )
     }
 
@@ -46,11 +48,13 @@ class IssueListViewModel : BaseViewModel() {
         loadingVisibility.value = View.GONE
     }
 
-    private fun onRetrievePostListSuccess(){
-
+    private fun onRetrievePostListSuccess(issues: List<Issue>) {
+        issuesAdapter.updatePostList(issues)
     }
 
-    private fun onRetrievePostListError(){
-
+    private fun onRetrievePostListError(err: Throwable) {
+        if (true) {
+            var err1 = err
+        }
     }
 }

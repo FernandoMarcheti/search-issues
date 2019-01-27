@@ -39,6 +39,7 @@
                 android:id="@+id/rvIssues"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:adapter="@{viewModel.getIssuesAdapter()}"
                 tools:listitem="@layout/item_issues"/>
 
     </android.support.constraint.ConstraintLayout>
