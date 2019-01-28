@@ -1,13 +1,14 @@
 package com.example.githubissuessearch.ui.issue
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.githubissuessearch.MainActivity
 import com.example.githubissuessearch.R
 import com.example.githubissuessearch.databinding.ItemIssuesBinding
 import com.example.githubissuessearch.model.Issue
-import com.example.githubissuessearch.utils.AdapterItemsContract
 
 class IssuesAdapter: RecyclerView.Adapter<IssuesAdapter.ViewHolder>() {
 
@@ -31,12 +32,20 @@ class IssuesAdapter: RecyclerView.Adapter<IssuesAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: ItemIssuesBinding):RecyclerView.ViewHolder(binding.root){
+    inner class ViewHolder(private val binding: ItemIssuesBinding):RecyclerView.ViewHolder(binding.root){
 
         private val viewModel = IssueViewModel()
+
+        init {
+            binding.root.setOnClickListener {
+                binding.root.context.startActivity(Intent(binding.root.context, MainActivity::class.java))
+            }
+        }
+
         fun bind(issue:Issue){
             viewModel.bind(issue)
             binding.viewModel = viewModel
+
         }
     }
 }

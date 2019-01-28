@@ -53,8 +53,5 @@ class IssueListViewModel : BaseViewModel() {
     }
 
     private fun onRetrievePostListError(err: Throwable) {
-        if (true) {
-            var err1 = err
-        }
     }
 }
