@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.githubissuessearch.R
 import com.example.githubissuessearch.databinding.ItemIssuesBinding
 import com.example.githubissuessearch.model.Issue
+import com.example.githubissuessearch.ui.issue.detail.IssueDetailActivity
 
 class IssuesAdapter: RecyclerView.Adapter<IssuesAdapter.ViewHolder>() {
 
@@ -37,7 +38,7 @@ class IssuesAdapter: RecyclerView.Adapter<IssuesAdapter.ViewHolder>() {
 
         init {
             binding.root.setOnClickListener {
-                binding.root.context.startActivity(Intent(binding.root.context, MainActivity::class.java))
+                binding.root.context.startActivity(Intent(binding.root.context, IssueDetailActivity::class.java))
             }
         }
 

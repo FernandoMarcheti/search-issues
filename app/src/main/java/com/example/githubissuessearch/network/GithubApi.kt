@@ -9,5 +9,5 @@ import retrofit2.http.Query
 interface GithubApi {
 
     @GET("/search/issues")
-    fun getIssues( @Query("q") repository: String): Observable<IssueResponse>
+    fun getIssues( @Query("q", encoded = true) repository: String): Observable<IssueResponse>
 }

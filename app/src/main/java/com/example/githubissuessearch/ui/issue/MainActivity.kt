@@ -44,7 +44,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleIntent(intent: Intent) {
         if (Intent.ACTION_SEARCH == intent.action) {
-            val query = intent.getStringExtra(SearchManager.QUERY)
+            viewModel.query = intent.getStringExtra(SearchManager.QUERY)
+            viewModel.loadPosts()
         }
     }
 

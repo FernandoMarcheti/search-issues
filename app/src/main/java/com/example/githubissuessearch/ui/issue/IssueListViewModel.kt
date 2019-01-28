@@ -17,19 +17,17 @@ class IssueListViewModel : BaseViewModel() {
 
     private lateinit var subscription: Disposable
     val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
+    val textInformation: MutableLiveData<Int> = MutableLiveData()
     val issuesAdapter: IssuesAdapter = IssuesAdapter()
+    var query: String = ""
 
     override fun onCleared() {
         super.onCleared()
         subscription.dispose()
     }
 
-    init{
-        loadPosts()
-    }
-
-    private fun loadPosts(){
-        subscription = githubApi.getIssues("repo:olivierlacan/keep-a-changelog")
+    fun loadPosts(){
+        subscription = githubApi.getIssues(makeIssuesByRepoSort(query)) //"repo:olivierlacan/keep-a-changelog")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { onRetrievePostListStart() }
@@ -41,6 +39,7 @@ class IssueListViewModel : BaseViewModel() {
     }
 
     private fun onRetrievePostListStart(){
+        textInformation.value = View.GONE
         loadingVisibility.value = View.VISIBLE
     }
 
@@ -53,5 +52,10 @@ class IssueListViewModel : BaseViewModel() {
     }
 
     private fun onRetrievePostListError(err: Throwable) {
+        var err1 = err
+    }
+
+    private fun makeIssuesByRepoSort(repository: String): String{
+        return "sort:number+repo:" + repository
     }
 }
