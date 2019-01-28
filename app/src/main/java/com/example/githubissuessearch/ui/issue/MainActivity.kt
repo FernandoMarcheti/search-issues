@@ -1,19 +1,30 @@
-package com.example.githubissuessearch
+package com.example.githubissuessearch.ui.issue
 
 import android.app.SearchManager
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
+import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.widget.SearchView
+import com.example.githubissuessearch.R
+import com.example.githubissuessearch.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: IssueListViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        addFragmentTo(R.id.content_frame, createFragment())
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.rvIssues.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        viewModel = ViewModelProviders.of(this).get(IssueListViewModel::class.java)
+        binding.viewModel = viewModel
         handleIntent(intent)
     }
 
@@ -29,10 +40,6 @@ class MainActivity : AppCompatActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         handleIntent(intent)
-    }
-
-    private fun createFragment(): IssuesFragment {
-        return IssuesFragment()
     }
 
     private fun handleIntent(intent: Intent) {

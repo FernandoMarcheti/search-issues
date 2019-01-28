@@ -5,7 +5,6 @@ import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.example.githubissuessearch.MainActivity
 import com.example.githubissuessearch.R
 import com.example.githubissuessearch.databinding.ItemIssuesBinding
 import com.example.githubissuessearch.model.Issue
