@@ -2,6 +2,7 @@ package com.example.githubissuessearch.ui.issue
 
 import android.content.Intent
 import android.databinding.DataBindingUtil
+import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -35,14 +36,18 @@ class IssuesAdapter: RecyclerView.Adapter<IssuesAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemIssuesBinding):RecyclerView.ViewHolder(binding.root){
 
         private val viewModel = IssueViewModel()
+        var issue: Issue? = null
 
         init {
             binding.root.setOnClickListener {
-                binding.root.context.startActivity(Intent(binding.root.context, IssueDetailActivity::class.java))
+                val intent = Intent(binding.root.context, IssueDetailActivity::class.java)
+                intent.putExtra(ISSUE_EXTRA, issue)
+                binding.root.context.startActivity(intent)
             }
         }
 
         fun bind(issue:Issue){
+            this.issue = issue
             viewModel.bind(issue)
             binding.viewModel = viewModel
 

@@ -56,6 +56,6 @@ class IssueListViewModel : BaseViewModel() {
     }
 
     private fun makeIssuesByRepoSort(repository: String): String{
-        return "sort:number+repo:" + repository
+        return QUERY_REPO_SORT + repository
     }
 }
