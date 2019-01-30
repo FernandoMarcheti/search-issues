@@ -40,7 +40,7 @@ class IssueListViewModel : BaseViewModel() {
 
     override fun onRetrievePostListSuccess(response: BaseResponse) {
         val issuesResponse: IssueResponse = response as IssueResponse
-        val sortedList = issuesResponse.items.sortedWith(compareBy({ it.number }))
+        val sortedList = issuesResponse.items.sortedWith(compareBy { it.number })
         issuesAdapter.updatePostList(sortedList)
     }
 

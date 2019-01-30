@@ -16,16 +16,10 @@ class IssueDetailViewModel : BaseViewModel() {
         body.value = issue.body
     }
 
-    fun getNumber(): MutableLiveData<Int> {
-        return number
-    }
+    fun getNumber(): MutableLiveData<Int> = number
 
-    fun getTitle(): MutableLiveData<String> {
-        return title
-    }
+    fun getTitle(): MutableLiveData<String> = title
 
-    fun getBody(): MutableLiveData<String> {
-        return body
-    }
+    fun getBody(): MutableLiveData<String> = body
 
 }
