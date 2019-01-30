@@ -1,3 +1,5 @@
 package com.example.githubissuessearch.model
 
-data class IssueResponse(val items: List<Issue>)
+import com.example.githubissuessearch.base.BaseResponse
+
+data class IssueResponse(val items: List<Issue>): BaseResponse

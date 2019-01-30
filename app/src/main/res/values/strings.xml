@@ -4,5 +4,7 @@
     <string name="search_hint">usuário/repositório</string>
 
     <string name= "retry"> Recarregar </string>
-    <string name= "issues_error"> Ocorreu um erro ao carregar as Issues/ Pull Requests </string>
+    <string name= "issues_error"> Não foi possível localizar as Issues/ Pull Requests </string>
+    <string name= "generic_error"> Ocorreu um erro. Por favor, tente novamente mais tarde. </string>
+    <string name= "no_network_error"> Erro de conexão. Por favor, verifique sua conexão com a internet. </string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.githubissuessearch.network
 
-import com.example.githubissuessearch.model.Issue
 import com.example.githubissuessearch.model.IssueResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
