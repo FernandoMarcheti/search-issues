@@ -14,9 +14,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_star_border" />
+                            <entry key="height" value="536" />
+                            <entry key="outputName" value="ic_github_social_logo" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\ZarpSystem\Desktop\ic_star_border.svg" />
+                            <entry key="sourceFile" value="C:\Users\ZarpSystem\Desktop\github-social-logo.svg" />
+                            <entry key="width" value="536" />
                           </map>
                         </option>
                       </PersistentState>

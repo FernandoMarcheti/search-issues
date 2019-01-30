@@ -17,7 +17,7 @@ class IssueListViewModel : BaseViewModel() {
 
     private lateinit var subscription: Disposable
     val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
-    val textInformation: MutableLiveData<Int> = MutableLiveData()
+    val logo: MutableLiveData<Int> = MutableLiveData()
     val issuesAdapter: IssuesAdapter = IssuesAdapter()
     var query: String = ""
 
@@ -39,7 +39,7 @@ class IssueListViewModel : BaseViewModel() {
     }
 
     private fun onRetrievePostListStart(){
-        textInformation.value = View.GONE
+        logo.value = View.GONE
         loadingVisibility.value = View.VISIBLE
     }
 
