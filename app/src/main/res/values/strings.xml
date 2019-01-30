@@ -3,6 +3,6 @@
     <string name="search_title">Pesquisar</string>
     <string name="search_hint">usuário/repositório</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name= "retry"> Recarregar </string>
+    <string name= "issues_error"> Ocorreu um erro ao carregar as Issues/ Pull Requests </string>
 </resources>
