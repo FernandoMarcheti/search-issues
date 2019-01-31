@@ -1,4 +1,4 @@
-# serach-issues
+# search-issues
 
 Projeto Android que lista Issues e Pull Requests de acordo com um repositório informado (usuário/repositório).
 
