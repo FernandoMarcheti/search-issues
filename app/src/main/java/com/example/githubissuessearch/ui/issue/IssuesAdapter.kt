@@ -2,7 +2,6 @@ package com.example.githubissuessearch.ui.issue
 
 import android.content.Intent
 import android.databinding.DataBindingUtil
-import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -48,9 +47,8 @@ class IssuesAdapter: RecyclerView.Adapter<IssuesAdapter.ViewHolder>() {
 
         fun bind(issue:Issue){
             this.issue = issue
-            viewModel.bind(issue)
+            viewModel.bind(issue, binding.ivAvatar)
             binding.viewModel = viewModel
-
         }
     }
 }

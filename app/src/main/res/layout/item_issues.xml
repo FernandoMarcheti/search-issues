@@ -19,6 +19,14 @@
             android:layout_height="match_parent"
             android:padding="@dimen/default_margin">
 
+            <ImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
             <TextView
                 android:id="@+id/tvNumber"
                 android:layout_width="0dp"
@@ -27,32 +35,20 @@
                 android:textSize="@dimen/default_font"
                 android:layout_marginStart="@dimen/default_margin"
                 android:layout_marginLeft="@dimen/default_margin"
-                app:layout_constraintWidth_percent="0.2"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toEndOf="@id/ivAvatar"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/default_font"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginLeft="@dimen/default_margin"
                 app:mutableText="@{viewModel.getTitle()}"
                 android:maxLines="2"
-                app:layout_constraintTop_toTopOf="@id/tvNumber"
-                app:layout_constraintBottom_toBottomOf="@id/tvNumber"
-                app:layout_constraintStart_toEndOf="@id/tvNumber"
-                app:layout_constraintEnd_toStartOf="@id/ivStar"/>
-
-            <ImageView
-                android:id="@+id/ivStar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/default_margin"
-                app:srcCompat="@drawable/ic_star_border"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/tvNumber"
+                app:layout_constraintStart_toStartOf="@id/tvNumber"
+                app:layout_constraintEnd_toEndOf="@id/tvNumber"/>
 
         </android.support.constraint.ConstraintLayout>
 

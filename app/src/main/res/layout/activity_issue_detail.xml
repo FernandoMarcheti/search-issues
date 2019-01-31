@@ -19,16 +19,16 @@
                 android:id="@+id/ivHeaderBackground"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                app:layout_constraintHeight_percent="0.35"
+                app:layout_constraintHeight_percent="0.3"
                 app:srcCompat="@color/colorPrimary" />
 
         <ImageView
-                android:id="@+id/ivLogo"
+                android:id="@+id/ivAvatar"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintHeight_percent="0.3"
                 app:layout_constraintDimensionRatio="1:1"
-                app:srcCompat="@drawable/ic_github_social_logo"
+                android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

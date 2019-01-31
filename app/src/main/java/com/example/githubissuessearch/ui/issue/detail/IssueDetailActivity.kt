@@ -18,7 +18,7 @@ class IssueDetailActivity : AppCompatActivity() {
         if(intent.hasExtra(ISSUE_EXTRA)){
             val viewModel: IssueDetailViewModel = ViewModelProviders.of(this).get(IssueDetailViewModel::class.java)
             val issue = (intent.getSerializableExtra(ISSUE_EXTRA) as? Issue)!!
-            viewModel.bind(issue)
+            viewModel.bind(issue, binding.ivAvatar)
             binding.viewModel = viewModel
         }
     }
